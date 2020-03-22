@@ -16,32 +16,14 @@ for i in range(33, 127+1):
 
 # Doing the conversion, etc.
 
-valid_input = False
-while not valid_input:
-    try:
-        chosen_number = int(input("PLease choose a number to find ascii code or character to find corresponding"
-                                  "number\n"))
-        if chosen_number not in range(MIN_NUMBER, MAX_NUMBER + 1):
-            print("Please enter within the range of {} and {}".format(MIN_NUMBER, MAX_NUMBER))
-        else:
-            print("The ascii code for {} is {}".format(chosen_number, chr(chosen_number)))
-            valid_input = True
-    except ValueError:
-        print(ord(str(chosen_number)))
-        valid_input = True
-
-# try:
-#     while int(chosen_number) not in range(MIN_NUMBER, MAX_NUMBER + 1):
-#         chosen_number = input("Please enter within the range of {} and {}\n".format(MIN_NUMBER, MAX_NUMBER))
-# except ValueError:
-#     pass
-#
-# if chosen_number.isdigit():
-#     print("The ascii code for {} is {}".format(int(chosen_number), chr(int(chosen_number))))
-# else:
-#     print(ord(chosen_number))
-
-# Code above could just hav eint(input()) and then have try and except have the char code one.
+chosen_number = input("Please enter in a number or letter")
+if chosen_number.isdigit():
+    chosen_number = int(chosen_number)
+    while chosen_number not in range(MIN_NUMBER, MAX_NUMBER + 1):
+        chosen_number = input("Please enter within the range of {} and {}\n".format(MIN_NUMBER, MAX_NUMBER))
+    print("The ascii code for {} is {}".format(chosen_number, chr(chosen_number)))
+else:
+    print(ord(chosen_number))
 
 
 # Creating columns to display ascii table (Horizontal to vertical)
