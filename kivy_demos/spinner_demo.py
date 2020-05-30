@@ -20,6 +20,7 @@ class SpinnerDemo(App):
     current_state = StringProperty()
     state_codes = ListProperty()
 
+
     def build(self):
         """ build Kivy app from the kv file """
         self.title = "Spinner Demo"
